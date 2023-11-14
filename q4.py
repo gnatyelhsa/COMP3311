@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # COMP3311 22T3 Ass2 ... print a transcript for a given student
-
+# fdhffs
 import sys
 import psycopg2
 import re
