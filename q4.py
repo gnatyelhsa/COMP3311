@@ -71,7 +71,7 @@ try:
   join courses d on c.course = d.id
   join subjects e on d.subject = e.id
   join terms f on d.term = f.id
-  where a.zid = %s
+  where a.zid = %s and f.code != '23T3'
   group by a.zid, e.code, f.code, e.title, c.mark, c.grade, e.uoc
   order by f.code, e.code;
   """
@@ -90,6 +90,7 @@ try:
     
     elif tup[5] in ("AS", "AW", "PW", "NA", "RD", "NF", "NC", "LE", "PE", "WD", "WJ"):
       changed[6] = "unrs"
+
     else:
       changed[6] = f"{tup[6]}uoc"
       total_achieved_uoc += tup[6]
